@@ -8,6 +8,7 @@ conn = engine.connect()
 
 metadata= MetaData()
 
+#tables to insert into sailors database
 sailors = Table('sailors',metadata,
         Column('sid',Integer,primary_key = True),
         Column('sname',String(30)),
@@ -32,6 +33,7 @@ payments = Table('payments',metadata,
         Column('date',String)
         )
 
+#dictionaries to insert
 conn.execute(sailors.insert(), [
     {'sid':22,'sname':'dusting','rating':7,'age':45.0},
     {'sid':29,'sname':'brutus','rating':1,'age':33.0},
